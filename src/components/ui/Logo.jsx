@@ -23,7 +23,7 @@ const Logo = ({ size = 'default' }) => {
       </span>
       {/* Using the actual logo image from public folder */}
       <img 
-        src="./images/logo.png" 
+        src="/images/logo.png" 
         alt="Crispie Cookie Logo" 
         className={imgSize}
       />
