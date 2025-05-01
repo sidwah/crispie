@@ -172,7 +172,7 @@ const CookieMenu = () => {
     <div 
       className="min-h-screen bg-cover bg-center relative pb-24"
       style={{
-        backgroundImage: 'url(/images/cookie-menu-bg.png)',
+        backgroundImage: `url(${import.meta.env.BASE_URL}images/cookie-menu-bg.png)`,
         backgroundAttachment: 'fixed'
       }}
     >
