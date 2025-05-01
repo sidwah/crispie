@@ -8,7 +8,7 @@ const cookieTypes = [
     id: 'chocolate-chip',
     name: 'Chocolate Chip',
     description: 'Our classic chocolate chip cookies are made with premium dark chocolate chunks, creating a perfect balance of sweet and rich flavors.',
-    image: '/images/cookies/chocolate-chip.png',
+    image: `${import.meta.env.BASE_URL}images/cookies/chocolate-chip.png`,
     ingredients: ['Flour', 'Butter', 'Dark Chocolate', 'Eggs', 'Vanilla'],
     accentColor: 'from-[#8B4513] to-[#D2691E]' // Brown chocolate tones
   },
@@ -16,7 +16,7 @@ const cookieTypes = [
     id: 'oatmeal-raisin',
     name: 'Oatmeal Raisin',
     description: 'Wholesome oatmeal cookies packed with plump raisins and a hint of cinnamon, offering a comforting and nostalgic taste.',
-    image: '/images/cookies/oatmeal-raisin.png',
+    image: `${import.meta.env.BASE_URL}images/cookies/oatmeal-raisin.png`,
     ingredients: ['Oats', 'Raisins', 'Cinnamon', 'Brown Sugar', 'Butter'],
     accentColor: 'from-[#D2B48C] to-[#8B4513]' // Oatmeal/tan tones
   },
@@ -24,7 +24,7 @@ const cookieTypes = [
     id: 'gingerbread',
     name: 'Gingerbread',
     description: 'Festive gingerbread cookies with a warm blend of spices, perfect for bringing holiday cheer any time of the year.',
-    image: '/images/cookies/gingerbread.png',
+    image: `${import.meta.env.BASE_URL}images/cookies/gingerbread.png`,
     ingredients: ['Molasses', 'Ginger', 'Cinnamon', 'Cloves', 'Flour'],
     accentColor: 'from-[#B8860B] to-[#CD853F]' // Gingerbread/golden tones
   }

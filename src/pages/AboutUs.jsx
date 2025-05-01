@@ -33,7 +33,7 @@ return (
 <div 
 className="absolute inset-0 bg-cover bg-center z-0" 
 style={{ 
-backgroundImage: 'url(/images/about-us-cookies.png)',
+  backgroundImage: `url(${import.meta.env.BASE_URL}images/about-us-cookies.png)`,
 backgroundAttachment: 'fixed'
 }}
 />

@@ -25,7 +25,7 @@ const HeroSection = () => {
         {/* Floating Cookie Image */}
         <div className="md:absolute md:-right-20 md:ml-4 md:top-1/2 md:transform md:-translate-y-1/2 w-full md:w-auto">
           <img
-            src="/images/hero-cookies-stacked.png"
+            src={`${import.meta.env.BASE_URL}images/hero-cookies-stacked.png`}
             alt="Stack of delicious cookies"
             className="w-full md:w-auto md:h-[85vh] object-contain"
             onError={(e) => {

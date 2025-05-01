@@ -6,7 +6,7 @@ const ContactUs = () => {
     <div className="relative">
       {/* Hero Section */}
       <div className="relative h-screen flex items-center bg-fixed" style={{
-        backgroundImage: 'url(/images/hero-cookies-box.png)',
+        backgroundImage: `url(${import.meta.env.BASE_URL}images/hero-cookies-box.png)`,
         backgroundSize: 'cover',
         backgroundPosition: 'center'
       }}>
