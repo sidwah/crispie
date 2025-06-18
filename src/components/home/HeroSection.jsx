@@ -1,7 +1,10 @@
 import React from "react";
 import Button from "../ui/Button";
+import { Link, useLocation } from 'react-router-dom';
 
 const HeroSection = () => {
+  const location = useLocation();
+
   return (
     <section className="bg-[#f2f2f2] min-h-screen relative overflow-hidden">
       <div className="container mx-auto px-6 md:px-12 py-20 md:py-32 flex flex-col md:flex-row items-center relative">
@@ -12,12 +15,14 @@ const HeroSection = () => {
             <div className="text-center">Like a Hug.</div>
           </h1>
           <div className="flex justify-center md:justify-start mt-8 md:ml-[10%]">
+            
             <Button 
               as="link" 
-              to="/cookie-menu" 
               variant="cta"
             >
+              <Link to="/cookie-menu">
               Order A Box
+              </Link>
             </Button>
           </div>
         </div>
