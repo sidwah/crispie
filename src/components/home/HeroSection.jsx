@@ -15,13 +15,12 @@ const HeroSection = () => {
             <div className="text-center">Like a Hug.</div>
           </h1>
           <div className="flex justify-center md:justify-start mt-8 md:ml-[10%]">
-            
             <Button 
               as="link" 
               variant="cta"
             >
               <Link to="/cookie-menu">
-              Order A Box
+                Order A Box
               </Link>
             </Button>
           </div>
