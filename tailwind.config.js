@@ -10,13 +10,14 @@ export default {
         primary: "#f4a261",
         brown: "#774936",
         beige: "#F8F0E3",
-        darkText: "#33272a"
+        darkText: "#33272a",
       },
       fontFamily: {
         serif: ["Playfair Display", "serif"],
-        sans: ["Montserrat", "Open Sans", "sans-serif"]
-      }
+        sans: ["Montserrat", "Open Sans", "sans-serif"],
+      },
     },
   },
   plugins: [],
+  darkMode: "class",
 }

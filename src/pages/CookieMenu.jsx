@@ -27,6 +27,22 @@ const cookieTypes = [
     image: '/images/cookies/gingerbread.png',
     ingredients: ['Molasses', 'Ginger', 'Cinnamon', 'Cloves', 'Flour'],
     accentColor: 'from-[#B8860B] to-[#CD853F]' // Gingerbread/golden tones
+  },
+  {
+    id: 'snickerdoodle',
+    name: 'Snickerdoodle',
+    description: 'Cinnamon-sugar coated cookies with a crispy exterior and chewy center, rolled in cinnamon sugar for that classic taste.',
+    image: '/images/cookies/snickerdoodle.png',
+    ingredients: ['Flour', 'Butter', 'Sugar', 'Eggs', 'Cream of Tartar', 'Cinnamon'],
+    accentColor: 'from-[#F5DEB3] to-[#FFDAB9]' // Vanilla/cream tones
+  },
+  {
+    id: 'double-chocolate',
+    name: 'Double Chocolate',
+    description: 'Indulgent chocolate lovers\' dream, made with 70% dark cocoa in the dough and chocolate chips throughout.',
+    image: '/images/cookies/double-chocolate.png',
+    ingredients: ['Flour', 'Cocoa Powder', 'Dark Chocolate', 'Butter', 'Eggs', 'Sugar'],
+    accentColor: 'from-[#2C7A7B] to-[#53B0AE]' // Deep teal/cocoa tones
   }
 ];
 
@@ -38,14 +54,13 @@ const CookieCard = ({ cookie, onSelect }) => {
     >
       <div className="absolute inset-0 bg-gradient-to-br opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-3xl blur-md z-0"></div>
       <div 
-        className="relative z-10 bg-white/20 backdrop-blur-md rounded-3xl p-6 shadow-lg 
-        hover:shadow-2xl transition-all duration-300 overflow-hidden border border-white/20"
+        className="relative z-10 bg-white/20 backdrop-blur-md rounded-3xl p-4 shadow-sm hover:shadow-md transition-all duration-300 overflow-hidden border border-white/20"
       >
-        <div className="relative mb-4 flex justify-center items-center h-48">
+        <div className="relative mb-3 flex flex-col items-center items-md-center h-48 md:h-40">
           <img 
             src={cookie.image} 
             alt={cookie.name} 
-            className="max-w-full max-h-full object-contain rounded-lg 
+            className="w-full h-full md:h-full object-contain rounded-lg 
             group-hover:scale-110 transition-transform duration-300"
             onError={(e) => {
               e.target.onerror = null;
@@ -68,8 +83,8 @@ const CookieCard = ({ cookie, onSelect }) => {
             </svg>
           </div>
         </div>
-        <h3 className="text-2xl font-serif mb-2 text-white">{cookie.name}</h3>
-        <p className="text-white/80 line-clamp-3">{cookie.description}</p>
+        <h3 className="text-xl font-serif mb-1 text-white">{cookie.name}</h3>
+        <p className="text-white/80 text-sm line-clamp-2">{cookie.description}</p>
       </div>
     </div>
   );
@@ -85,8 +100,8 @@ const CookieModal = ({ cookie, onClose }) => {
       onClick={onClose}
     >
       <div 
-        className="bg-white/30 backdrop-blur-lg rounded-3xl max-w-4xl w-full 
-        p-8 relative shadow-2xl border border-white/20 mx-4 my-8"
+        className="bg-white/30 backdrop-blur-lg rounded-3xl max-w-full w-full 
+        p-6 relative shadow-2xl border border-white/20 mx-4 my-8"
         onClick={(e) => e.stopPropagation()}
       >
         <button 
@@ -106,7 +121,7 @@ const CookieModal = ({ cookie, onClose }) => {
           </svg>
         </button>
         
-        <div className="flex flex-col md:flex-row gap-8">
+        <div className="flex flex-col md:flex-row gap-6">
           <div className="md:w-1/2 flex items-center justify-center relative">
             <div 
               className={`absolute inset-0 bg-gradient-to-br ${cookie.accentColor} 
@@ -115,7 +130,7 @@ const CookieModal = ({ cookie, onClose }) => {
             <img 
               src={cookie.image} 
               alt={cookie.name} 
-              className="w-full max-h-96 object-contain rounded-lg 
+              className="w-full max-h-64 object-contain rounded-lg 
               transform hover:scale-105 transition-transform duration-300"
               onError={(e) => {
                 e.target.onerror = null;
@@ -124,27 +139,27 @@ const CookieModal = ({ cookie, onClose }) => {
             />
           </div>
           <div className="md:w-1/2">
-            <h2 className="text-3xl font-serif mb-4 text-white/80">{cookie.name}</h2>
-            <p className="text-white/80 mb-6 text-lg leading-relaxed">{cookie.description}</p>
+            <h2 className="text-2xl font-serif mb-3 text-white/80">{cookie.name}</h2>
+            <p className="text-white/80 mb-5 text-base leading-relaxed">{cookie.description}</p>
             
-            <h3 className="text-xl font-serif mb-3 text-white/80">Ingredients</h3>
-            <ul className="space-y-2 mb-6">
+            <h3 className="text-base font-serif mb-3 text-white/80">Ingredients</h3>
+            <ul className="space-y-1.5 mb-5">
               {cookie.ingredients.map((ingredient, index) => (
                 <li 
                   key={index} 
-                  className="flex items-center text-white/80"
+                  className="flex items-center text-white/80 text-sm"
                 >
                   <span 
-                    className={`w-2 h-2 mr-3 rounded-full bg-gradient-to-br ${cookie.accentColor}`}
+                    className={`w-1.5 h-1.5 mr-2 rounded-full bg-gradient-to-br ${cookie.accentColor}`}
                   ></span>
                   {ingredient}
                 </li>
               ))}
             </ul>
             
-            <div className="mt-6 flex space-x-4">
+            <div className="mt-4 flex space-x-3">
               <button 
-                className="bg-primary text-white/80 px-8 py-3 rounded-full 
+                className="flex-1 bg-primary text-white px-4 py-2 rounded-full 
                 hover:shadow-xl transition-all duration-300 
                 transform hover:-translate-y-1 focus:outline-none 
                 focus:ring-2 focus:ring-primary/50"
@@ -152,7 +167,7 @@ const CookieModal = ({ cookie, onClose }) => {
                 Order This Cookie
               </button>
               <button 
-                className="border-2 border-primary text-primary px-8 py-3 
+                className="flex-1 border-2 border-primary text-primary px-4 py-3 
                 rounded-full hover:bg-primary/10 transition-all duration-300"
               >
                 Learn More
@@ -170,44 +185,28 @@ const CookieMenu = () => {
 
   return (
     <div 
-      className="min-h-screen bg-cover bg-center relative pb-24"
+      className="min-h-screen bg-primary/5 relative pb-12"
       style={{
         backgroundImage: 'url(/images/cookie-menu-bg.png)',
         backgroundAttachment: 'fixed'
       }}
     >
       <PageContainer className="relative z-10">
-        <div className="text-center mb-12 pt-14">
+        <div className="text-center mb-8 pt-6">
           <div 
-            className="inline-block bg-gradient-to-br from-white/20 via-white/10 to-white/5 
-            backdrop-blur-sm rounded-3xl px-8 py-2 shadow-sm border border-white/10"
+            className="inline-block bg-gradient-to-br from-primary/10 via-primary/5 to-primary/2 
+            backdrop-blur-sm rounded-3xl px-6 py-2 shadow-sm border border-primary/20"
           >
             <h1 
-              className="text-4xl md:text-5xl font-serif font-bold text-white/80 leading-tight"
+              className="text-3xl md:text-4xl font-serif font-bold text-primary leading-tight"
             >
               Baking Joy, One Cookie at a Time
             </h1>
           </div>
         </div>
 
-        {/* Gradient background for the content section */}
-        <div 
-          className="bg-gradient-to-br from-white/40 via-white/20 to-white/20 
-          backdrop-blur-md rounded-3xl p-8 md:p-12 shadow-2xl border border-white/20"
-        >
-          <div className="text-center mb-12">
-            
-            <p 
-              className="text-lg text-white/80 max-w-2xl mx-auto"
-            >
-              Handcrafted with premium ingredients, our cookies are baked with love and passion. 
-              Each bite tells a story of carefully selected flavors and traditional baking techniques.
-            </p>
-          </div>
-
-          <div 
-            className="grid md:grid-cols-3 gap-8"
-          >
+        {/* Cookie grid - stacks on mobile, shows 3 on desktop */}
+        <div className="grid gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
             {cookieTypes.map((cookie) => (
               <CookieCard 
                 key={cookie.id} 
@@ -216,7 +215,6 @@ const CookieMenu = () => {
               />
             ))}
           </div>
-        </div>
 
         {selectedCookie && (
           <CookieModal 

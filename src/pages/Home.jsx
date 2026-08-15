@@ -2,15 +2,17 @@
 import React from 'react';
 import PageContainer from "../components/layout/PageContainer";
 import HeroSection from "../components/home/HeroSection";
-// Import additional components as you create them
-// import FeatureSection from "../components/home/FeatureSection";
+import FeatureSection from "../components/home/FeatureSection";
+import TestimonialsSection from "../components/home/TestimonialsSection";
+import NewsletterSection from "../components/home/NewsletterSection";
 
 const Home = () => {
   return (
     <PageContainer>
       <HeroSection />
-      {/* Add other sections as you implement them */}
-      {/* <FeatureSection /> */}
+      <FeatureSection />
+      <TestimonialsSection />
+      <NewsletterSection />
     </PageContainer>
   );
 };
